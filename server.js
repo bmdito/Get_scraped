@@ -11,6 +11,18 @@ console.log("\n********************************\n" +
 //Initialize express
 var app = express();
 
+//set up static folder for web app
+app.use(express.static("public"));
+
+app.use(express.urlencoded({extended:false}));
+
+app.use(express.json());
+
+var exphbs = require("express-handlebars");
+//engine
+app.engine("handlebars", exphbs({defaultLayout : 'main'}));
+app.set("view engine", "handlebars");
+
 //Database configuration
 var databaseURL = "scraped";
 var collections = ["scrapedData"];
@@ -57,9 +69,13 @@ $("div.post-wrapper").each(function(i,element){
         
 
     });
-
-
-
     
 });
 
+app.get("/", function(req,res){
+    res.render("index");
+})
+
+app.listen(3000, function() {
+    console.log("App running on port 3000!");
+  });
