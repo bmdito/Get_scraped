@@ -1,4 +1,5 @@
 var cheerio = require("cheerio");
+// var mongojs = require("mongojs");
 var axios = require("axios");
 
 console.log("\n********************************\n" +
@@ -16,20 +17,27 @@ axios.get("https://www.theonion.com/").then(function(response){
     var results = [];
 
 //
-$("h1.headline").each(function(i,element){
-    var title = $(element).text();
+$("div.post-wrapper").each(function(i,element){
+    var title = $(element).find("h1").text();
 
-    var link = $(element).children().attr("href");
+    var link = $(element).find("h1").children().attr("href");
 
+    
+    var summary = $(element).text();
     results.push({
 
         title:title,
-        link:link
+        link:link,
+        summary:summary
+        
 
         });
-    console.log(results);    
+        console.log(results);
 
     });
 
+
+
+    
 });
 
