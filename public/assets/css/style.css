@@ -1,15 +1,5 @@
-#navbar{
-overflow:hidden;
-background-color:#80aebd;
-z-index:2;
-display:flex;
-justify-content:center;
-}
 
-/* styling for brand on navbar */
-#brand{
-    color:blue;
-}
+
 
 /* jumbotron for main image */
 #jumboTime{
@@ -29,7 +19,25 @@ justify-content:center;
         z-index:-1;
 }
 
-/* navbar butttons */
-.butt{
-    color:purple;
+.card {
+    margin-top: 1em;
+    margin-bottom:1em;
+}
+
+.cardSt {
+    margin-left:1em;
+    margin-right:1em;
+    margin-bottom:.25em;
+    margin-top:.25em;
+    border:2px solid black;
+    border-radius:20px;
+}
+
+button {
+    text-align:right !important;
+}
+
+.displayWrap{
+    border:2px solid black;
+    background:lightpink;
 }

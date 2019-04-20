@@ -48,7 +48,7 @@ $("div.post-wrapper").each(function(i,element){
 
     result.title = $(element).find("h1").text();
 
-    result.summary = $(element).text();
+    result.summary = $(element).find("p").text();
 
     result.link = $(element).find("h1").children().attr("href");
    
@@ -63,13 +63,23 @@ $("div.post-wrapper").each(function(i,element){
     
         });
         
-        res.send("Scrape Complete");
+        res.redirect("/");
     });
 });
+   
+
 
 app.get("/", function(req,res){
-    res.render("index");
-})
+    db.Article.find({}).limit(10)
+        .then(function(results){
+            var hbObj = {
+                articles: results
+            };
+            res.render("index", hbObj);
+        })
+});
+
+
 
 app.listen(3000, function() {
     console.log("App running on port 3000!");
