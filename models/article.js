@@ -16,9 +16,13 @@ var ArticleSchema = new Schema ({
         type: String,
         required: true
     },
-    commentId: {
+    note: {
         type: Schema.Types.ObjectId,
-        ref: "comId"
+        ref: "Note"
+    },
+    saved :{
+        type:Boolean,
+        default: false
     }
     
 });

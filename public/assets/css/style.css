@@ -1,5 +1,6 @@
-
-
+#buttScrape{
+    margin-left:10em;
+}
 
 /* jumbotron for main image */
 #jumboTime{
@@ -8,15 +9,20 @@
 }
 
 /* jumbo background image */
-#jumboTime .back-image {
+.jumbo {
     
-        position:absolute;
-        background:url("");
+        
+        background:url("../img/newspaper.jpg");
         background-position:center;
         background-repeat:no-repeat;
         width:100%;
-        height:500px;
-        z-index:-1;
+        height:450px;
+        text-align:center;
+        color:white;
+        font-weight: bolder;
+        opacity: 0.8;
+        
+        
 }
 
 .card {
@@ -33,11 +39,8 @@
     border-radius:20px;
 }
 
-button {
-    text-align:right !important;
-}
-
-.displayWrap{
-    border:2px solid black;
+.saved-header{
+    text-align:center;
     background:lightpink;
+
 }
