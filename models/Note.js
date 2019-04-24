@@ -7,7 +7,7 @@ var Schema = mongoose.Schema;
 
 var NoteSchema = new Schema ({
     title:String,
-    body: String
+    comment: String
 });
 
 //create model from schema above using mongoose modeling

@@ -1,0 +1,61 @@
+
+
+            <br>
+                <div class="Card cardSt">
+                    <div class="card-header">
+                        <h3 class="art-title">{{articles.title}}
+                        {{!-- <button type="button" class="btn btn-success sv">save</button> --}}
+                        
+                        
+                        </h3>
+                    </div>
+                    
+                    <div class="card-body">
+                        <a href={{link}}>{{articles.link}}</a>
+                        <p class="card-text">{{articles.summary}}</p>
+                    </div>
+                </div>
+            <br>
+{{#each articles}}
+<div class="Card cardSt">
+    <div class="card-header">
+        <h3 class="art-title">{{articles.note.title}}</h3>
+    </div>
+                    
+    <div class="card-body">
+        
+            <p class="card-text">{{articles.note.comment}}</p>
+    </div>
+</div>
+
+
+{{/each}}
+
+
+<form >
+<h3>New Note</h3>    
+<div class="form-group">
+    <label for="titleCom">Title</label>
+    <input type="text" class="form-control" id="titleCom" name="title">
+  </div>    
+<div class="form-group">
+    <label for="commentArea">Comment</label>
+    <textarea class="form-control" id="commentArea" rows="3" name="comment"></textarea>
+</div>
+<div>
+    <button id="subCom" type="submit" value="submit" class="btn btn-primary" data-id="{{articles._id}}">Submit</button>
+</div>
+</form>
+
+
+
+{{!-- <div class="Card cardSt">
+    <div class="card-header">
+        <h3 class="art-title">{{title}}</h3>
+    </div>                  
+    <div class="card-body">
+        <a href={{link}}>{{link}}</a>
+        <p class="card-text">{{summary}}</p>
+    </div>
+</div>
+<div id="notes"></div> --}}
