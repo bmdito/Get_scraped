@@ -14,6 +14,11 @@ var db = require("./models");
 
 var PORT = 3000;
 
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraped";
+
+mongoose.connect(MONGODB_URI);
+
+
 //Initialize express
 var app = express();
 
@@ -31,7 +36,7 @@ app.engine("handlebars", exphbs({defaultLayout : 'main'}));
 app.set("view engine", "handlebars");
 
 //Database configuration
-mongoose.connect('mongodb://localhost/scraped', {useNewUrlParser: true});
+// mongoose.connect('mongodb://localhost/scraped', {useNewUrlParser: true});
 
 require("./routes/apiRoutes")(app);
 // require("./public/assets/javascript/app")(app);
